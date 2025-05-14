@@ -1,0 +1,12 @@
+@startuml
+actor Actor
+participant "Sistema" as Sistema
+participant "Banco de Dados" as BD
+
+Actor -> Sistema : Solicita alteração de reserva
+Sistema -> BD : Verifica reserva existente
+BD --> Sistema : Retorna dados da reserva
+Sistema -> BD : Atualiza dados da reserva
+BD --> Sistema : Confirma atualização
+Sistema --> Actor : Reserva atualizada com sucesso
+@enduml

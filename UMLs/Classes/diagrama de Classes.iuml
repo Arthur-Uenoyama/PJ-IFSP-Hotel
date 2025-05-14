@@ -1,0 +1,214 @@
+@startuml
+
+'--- Enums ---
+enum Sexo {
+  MASCULINO
+  FEMININO
+  OUTRO
+}
+enum TipoDocumento {
+  CPF
+  CNPJ
+}
+enum StatusQuarto {
+  DISPONIVEL
+  OCUPADO
+  MANUTENCAO
+}
+enum TipoCama {
+  SOLTEIRO
+  CASAL
+  BELICHE
+}
+enum TipoPensao {
+  SEM_PENSAO
+  CAFE_MANHA
+  MEIA_PENSAO
+  PENSAO_COMPLETA
+}
+enum FormaPagamento {
+  DINHEIRO
+  CARTAO_CREDITO
+  CARTAO_DEBITO
+  BOLETO_BANCARIO
+  PIX
+}
+enum StatusReserva {
+  PENDENTE
+  CONFIRMADA
+  CANCELADA
+  FINALIZADA
+}
+enum StatusPagamento {
+  PENDENTE
+  APROVADO
+  RECUSADO
+}
+enum StatusPedidoServico {
+  PENDENTE
+  EM_ANDAMENTO
+  CONCLUIDO
+  CANCELADO
+}
+
+'--- Entidades principais ---
+class Hospedes {
+  - id: int
+  - nomeCompleto: String
+  - email: String
+  - senhaHash: String
+  - telefoneFixo: String
+  - telefoneCelular: String
+  - dataNascimento: Date
+  - sexo: Sexo
+  - profissao: String
+  - nacionalidade: String
+  - tipoDocumento: TipoDocumento
+  - documento: String
+  - cep: String
+  - logradouro: String
+  - numero: String
+  - complemento: String
+  - bairro: String
+  - cidade: String
+  - estado: String
+  - criadoEm: DateTime
+
+  + gerenciarCadastro(): void
+  + gerenciarReservas(): void
+  + avaliarHotel(): void
+  + fazerMultiplasReservas(): void
+
+}
+
+class Funcionario {
+  - id: int
+  - nome: String
+  - email: String
+  - senhaHash: String
+  - cargo: String
+  - telefone: String
+  - criadoEm: DateTime
+
+  + gerenciarReserva(reserva: Reserva): void
+  + gerenciarQuarto(quarto: Quarto): void
+  + gerenciarHospedes(Hospedes: Hospedes): void
+  + confirmarPagamento(pagamento: Pagamento): void
+  + gerenciarFuncionarios(funaionario: Funcionario): void
+  + gerenciarPedido(reserva: Reserva): void
+
+}
+
+class Quarto {
+  - id: int
+  - numero: String
+  - camasSolteiro: int
+  - beliches: int
+  - camasCasal: int
+  - precoNoite: double
+  - descricao: String
+  - status: StatusQuarto
+  - imagem: String
+
+  + reservar(): void
+  + verificarDisponibilidade(): boolean
+}
+
+class Reserva {
+  - id: int
+  - dataReserva: DateTime
+  - dataCheckin: Date
+  - dataCheckout: Date
+  - tipoCama: TipoCama
+  - valorReserva: double
+  - tipoPensao: TipoPensao
+  - formaPagamento: FormaPagamento
+  - status: StatusReserva
+  - observacoes: String
+  - criadoEm: DateTime
+
+  + criar(quarto: Quarto, Hospedes: Hospedes): void
+  + cancelar(): void
+}
+
+class HospedeSecundario {
+  - id: int
+  - nome: String
+  - documento: String
+  - criadoEm: DateTime
+}
+
+class ServicoQuarto {
+  - id: int
+  - nomeServico: String
+  - descricao: String
+  - preco: double
+}
+
+class PedidoServico {
+  - id: int
+  - descricao: String
+  - quantidade: int
+  - valorUnitario: double
+  - status: StatusPedidoServico
+  - criadoEm: DateTime
+
+  + gerenciarPedido(reserva: Reserva): void
+}
+
+class Pagamento {
+  - id: int
+  - valorPagamento: double
+  - forma: FormaPagamento
+  - status: StatusPagamento
+  - dataPagamento: DateTime
+  - dataBaixa: DateTime
+
+  + confirmar(): void
+}
+
+class Avaliacao {
+  - id: int
+  - nota: int
+  - comentario: String
+  - criadoEm: DateTime
+
+  + criar(): void
+}
+
+class RegraQuarto {
+  - descricao: String
+}
+
+'--- Relacionamentos ---
+Hospedes "1" -- "0..*" Reserva            : faz
+Hospedes "1" -- "0..*" Avaliacao          : avalia
+
+Funcionario "1" -- "0..*" Reserva         : gerencia
+Funcionario "1" -- "0..*" Quarto          : gerencia
+Funcionario "1" -- "0..*" Pagamento       : gerencia
+
+Quarto "1" -- "0..*" Reserva              : reservado_em
+Quarto "1" -- "0..*" RegraQuarto          : possui
+
+Reserva "1" -- "0..*" Pagamento           : gera
+Reserva "1" -- "0..*" PedidoServico       : possui
+Reserva "1" -- "0..*" HospedeSecundario   : acompanha
+
+PedidoServico "1" -- "1" ServicoQuarto    : baseado_em
+
+Avaliacao "1" -- "1" Quarto               : sobre
+
+'--- Dependências para enums ---
+Hospedes ..> Sexo               : sexo  
+Hospedes ..> TipoDocumento      : tipoDocumento  
+Quarto ..> StatusQuarto        : status  
+Reserva ..> TipoCama           : tipoCama  
+Reserva ..> TipoPensao         : tipoPensao  
+Reserva ..> FormaPagamento     : formaPagamento  
+Reserva ..> StatusReserva      : status  
+PedidoServico ..> StatusPedidoServico : status  
+Pagamento ..> FormaPagamento   : forma  
+Pagamento ..> StatusPagamento  : status  
+
+@enduml

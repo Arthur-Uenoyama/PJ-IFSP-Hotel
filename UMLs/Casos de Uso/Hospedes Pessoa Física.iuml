@@ -1,0 +1,26 @@
+@startuml
+skinparam backgroundColor #A8D0E6
+skinparam actorStyle stick
+left to right direction
+
+actor "Hóspede\nPessoa Física" as HospedeFisica
+
+rectangle "Gerenciamento de Hotel" {
+  usecase "Gerenciar cadastro" as UC_GerenciarCadastro
+  usecase "Gerenciar reservas" as UC_GerenciarReservas
+  usecase "Avaliar hotel" as UC_AvaliarHotel
+  usecase "Fazer login" as UC_FazerLogin
+  usecase "Validar login" as UC_ValidarLogin
+  usecase "Erro login" as UC_ErroLogin
+  usecase "Recuperar senha" as UC_RecuperarSenha
+}
+
+HospedeFisica --> UC_FazerLogin
+HospedeFisica --> UC_GerenciarCadastro
+HospedeFisica --> UC_GerenciarReservas
+HospedeFisica --> UC_AvaliarHotel
+
+UC_FazerLogin ..> UC_ValidarLogin : <<include>>
+UC_FazerLogin ..> UC_ErroLogin : <<extend>>
+UC_RecuperarSenha ..> UC_FazerLogin : <<include>>
+@enduml

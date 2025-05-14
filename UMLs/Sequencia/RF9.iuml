@@ -1,0 +1,20 @@
+@startuml
+actor Actor
+participant "Sistema" as Sistema
+participant "Banco de Dados" as BD
+
+Actor -> Sistema : Solicita check-in
+Sistema -> BD : Verifica reserva e disponibilidade
+BD --> Sistema : Retorna status
+Sistema -> BD : Atualiza status para "Em hospedagem"
+BD --> Sistema : Confirma atualização
+Sistema --> Actor : Check-in realizado
+
+== Outro cenário ==
+Actor -> Sistema : Solicita check-out
+Sistema -> BD : Verifica dados da hospedagem
+Sistema -> Sistema : Calcula valor final
+Sistema -> BD : Atualiza status para "Finalizada"
+BD --> Sistema : Confirma atualização
+Sistema --> Actor : Check-out realizado e valor exibido
+@enduml

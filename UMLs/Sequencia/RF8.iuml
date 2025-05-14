@@ -1,0 +1,11 @@
+@startuml
+actor Actor
+participant "Sistema" as Sistema
+participant "Banco de Dados" as BD
+
+Actor -> Sistema : Solicita comprovante de reserva
+Sistema -> BD : Busca dados da reserva
+BD --> Sistema : Retorna dados
+Sistema -> Sistema : Gera comprovante (PDF ou visual)
+Sistema --> Actor : Exibe ou envia comprovante
+@enduml

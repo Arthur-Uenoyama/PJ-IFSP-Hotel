@@ -1,0 +1,16 @@
+startuml
+actor Actor
+participant "Sistema" as Sistema
+participant "Banco de Dados" as BD
+
+Actor -> Sistema : Solicita cancelamento de reserva
+Sistema -> BD : Verifica se a reserva pode ser cancelada
+BD --> Sistema : Confirma possibilidade
+alt Cancelamento permitido
+    Sistema -> BD : Remove reserva
+    BD --> Sistema : Confirma remoção
+    Sistema --> Actor : Reserva cancelada com sucesso
+else Cancelamento não permitido
+    Sistema --> Actor : Informa que o cancelamento não é possível
+end
+@enduml

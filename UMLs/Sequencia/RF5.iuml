@@ -1,0 +1,10 @@
+@startuml
+actor Actor
+participant "Sistema" as Sistema
+participant "Banco de Dados" as BD
+
+Actor -> Sistema : Envia dados do hóspede
+Sistema -> BD : Salva dados no banco
+BD --> Sistema : Confirma cadastro
+Sistema --> Actor : Hóspede cadastrado com sucesso
+@enduml

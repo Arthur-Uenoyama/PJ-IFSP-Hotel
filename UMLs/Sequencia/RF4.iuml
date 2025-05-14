@@ -1,0 +1,11 @@
+@startuml
+actor Actor
+participant "Sistema" as Sistema
+participant "Banco de Dados" as BD
+
+Actor -> Sistema : Solicita cálculo de valor
+Sistema -> BD : Obtém dados da reserva (quarto, diárias, adicionais)
+BD --> Sistema : Retorna dados da reserva
+Sistema -> Sistema : Calcula valor total
+Sistema --> Actor : Exibe valor da hospedagem
+@enduml

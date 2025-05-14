@@ -1,0 +1,32 @@
+@startuml
+skinparam backgroundColor #A8D0E6
+skinparam actorStyle stick
+left to right direction
+
+actor "Funcionário\nHotel" as Funcionario
+
+rectangle "Gerenciamento de Hotel" {
+  usecase "Gerenciar quartos" as UC_GerenciarQuartos
+  usecase "Gerenciar funcionários" as UC_GerenciarFuncionarios
+  usecase "Gerenciar hóspedes" as UC_GerenciarHospedes
+  usecase "Gerenciar reservas" as UC_GerenciarReservasFuncionario
+  usecase "Gerenciar serviços de quarto" as UC_GerenciarServicos
+  usecase "Confirmar pagamentos" as UC_ConfirmarPagamentos
+  usecase "Fazer login" as UC_FazerLogin
+  usecase "Validar login" as UC_ValidarLogin
+  usecase "Erro login" as UC_ErroLogin
+  usecase "Recuperar senha" as UC_RecuperarSenha
+}
+
+Funcionario --> UC_FazerLogin
+Funcionario --> UC_GerenciarQuartos
+Funcionario --> UC_GerenciarFuncionarios
+Funcionario --> UC_GerenciarHospedes
+Funcionario --> UC_GerenciarReservasFuncionario
+Funcionario --> UC_GerenciarServicos
+Funcionario --> UC_ConfirmarPagamentos
+
+UC_FazerLogin ..> UC_ValidarLogin : <<include>>
+UC_FazerLogin ..> UC_ErroLogin : <<extend>>
+UC_RecuperarSenha ..> UC_FazerLogin : <<include>>
+@enduml

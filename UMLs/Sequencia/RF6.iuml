@@ -1,0 +1,10 @@
+@startuml
+actor Actor
+participant "Sistema" as Sistema
+participant "Banco de Dados" as BD
+
+Actor -> Sistema : Solicita consulta de hóspedes
+Sistema -> BD : Busca hóspedes no banco
+BD --> Sistema : Retorna lista de hóspedes
+Sistema --> Actor : Exibe lista
+@enduml

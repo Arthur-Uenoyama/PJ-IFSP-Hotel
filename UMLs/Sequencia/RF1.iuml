@@ -1,0 +1,16 @@
+@startuml
+actor Actor
+participant "Sistema" as Sistema
+participant "Banco de Dados" as BD
+
+Actor -> Sistema : Solicita cadastro de reserva
+Sistema -> BD : Verifica disponibilidade de quarto
+BD --> Sistema : Retorna disponibilidade
+alt Quarto disponível
+    Sistema -> BD : Cadastra reserva
+    BD --> Sistema : Confirma cadastro
+    Sistema --> Actor : Reserva cadastrada com sucesso
+else Quarto indisponível
+    Sistema --> Actor : Exibe mensagem de indisponibilidade
+end
+@enduml
