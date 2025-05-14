@@ -1,0 +1,217 @@
+:root {
+  --primary-green: #2e7d32;
+  --secondary-green: #81c784;
+}
+
+.form-label {
+  color: #006400;
+}
+
+.container-main {
+  flex: 1;
+  max-width: 1200px;
+  padding: 2rem 1.5rem;
+}
+
+h1 {
+  color: var(--primary-green);
+  font-weight: 600;
+  border-bottom: 3px solid var(--secondary-green);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card-section {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.quartos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.quarto {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.2s;
+  border: 2px solid;
+}
+
+.quarto.disponivel {
+  background-color: #d4edda;
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+  cursor: pointer;
+}
+
+.quarto.ocupado {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+  color: #dc3545;
+  cursor: not-allowed;
+}
+
+.quarto.selecionado {
+  background-color: #fff3cd;
+  border-color: #ffc107;
+  transform: scale(1.05);
+}
+
+.btn-pesquisar {
+  background-color: var(--primary-green);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-pesquisar:hover {
+  background-color: var(--secondary-green);
+}
+
+.hospede-item button {
+  flex-shrink: 0;
+  height: 38px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.hospede-item:hover {
+  background-color: #f8f9fa;
+}
+
+.suggestions-container {
+  position: relative;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: none;
+}
+
+.suggestion-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+.suggestion-item div:first-child {
+  font-weight: bold;
+}
+
+.suggestion-item div:last-child {
+  font-size: 0.85em;
+  color: #666;
+}
+
+.quarto .small {
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+.quarto.disponivel:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(46, 125, 50, 0.3);
+}
+
+.quarto.selecionado-hospede {
+  background-color: #28a745;
+  border: 2px solid #218838;
+  color: white;
+}
+
+#clienteSelecionadoContainer {
+  flex-grow: 1;
+  margin-right: -1px; /* Para alinhar com o botão */
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding-top:5px;
+}
+
+#nomeClienteSelecionado {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.input-group {
+  flex-wrap: nowrap;
+  position: static;
+}
+
+.quarto.selecionado {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo específico para quartos selecionados por CLIQUE */
+.quarto.selecionado.por-clique {
+  border: 3px solid #FFA000; /* Laranja médio */
+  background-color: #FFF3E0; /* Laranja muito claro */
+}
+
+/* Ícone indicativo para seleção por clique */
+.quarto.selecionado.por-clique::after {
+  content: "✓";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #FFA000; /* Laranja médio */
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para quartos selecionados por DROPDOWN (hóspedes) */
+.quarto.selecionado.por-select {
+  border: 3px solid #0d6efd;
+  background-color: #e7f1ff; /* Azul muito claro */
+}
+
+/* Ícone indicativo para seleção por dropdown */
+.quarto.selecionado.por-select::after {
+  content: "👤";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #0d6efd;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

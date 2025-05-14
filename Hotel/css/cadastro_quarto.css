@@ -1,0 +1,78 @@
+:root {
+    --primary-green: #2e7d32;
+    --secondary-green: #81c784;
+    --light-green: #e8f5e9;
+}
+
+.container-main {
+    flex: 1;
+    max-width: 1200px;
+    padding: 2rem 1.5rem;
+}
+
+h1 {
+    color: var(--primary-green);
+    font-weight: 600;
+    border-bottom: 3px solid var(--secondary-green);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card-section {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-label {
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    border: none;
+    padding: 8px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #1b5e20;
+}
+
+.file-upload {
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+.file-upload:hover {
+    border-color: var(--primary-green);
+}
+
+.regra-item {
+    transition: all 0.3s ease;
+}
+
+.form-hidden {
+    display: none;
+    visibility: hidden;
+    /* Torna o elemento invisível */
+    position: absolute;
+    /* Remove do fluxo visual */
+    height: 0;
+    /* Remove a altura visível */
+    width: 0;
+    /* Remove a largura visível */
+    overflow: hidden;
+    /* Garante que nada seja exibido */
+}

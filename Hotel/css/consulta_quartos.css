@@ -1,0 +1,89 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+:root {
+    --primary-green: #2e7d32;
+    --secondary-green: #81c784;
+    --light-green: #e8f5e9;
+}
+
+.container-main {
+    flex: 1;
+    max-width: 1200px;
+    padding: 2rem 1.5rem;
+}
+
+h1 {
+    color: var(--primary-green);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.title-card {
+    display: flex;
+    justify-content: space-between;
+    /* h1 na esquerda, botão na direita */
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 90px;
+    /* Ajuste conforme necessário */
+    border-bottom: 3px solid var(--secondary-green);
+    /* Mantém o estilo existente */
+}
+
+.title-card h1 {
+    text-align: left;
+    /* Garante que o texto do h1 esteja alinhado à esquerda */
+    margin: 0;
+    /* Remove margens extras */
+    padding: 4;
+}
+
+.title-card button {
+    margin: 0;
+    /* Remove margens extras */
+}
+
+.card-section {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.table {
+    margin-bottom: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background: var(--primary-green);
+    color: white;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(46, 125, 50, 0.05);
+}
+
+.btn-success {
+    background-color: var(--primary-green);
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: var(--secondary-green);
+}
+
+.input-group-text {
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+}

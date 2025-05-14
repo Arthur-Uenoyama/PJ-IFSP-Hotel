@@ -1,0 +1,277 @@
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-nav .nav-link {
+    font-size: 16px;
+    color: white !important;
+    padding: 10px 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    min-width: 180px;
+}
+
+.dropdown-menu a {
+    color: black !important;
+}
+
+.dropdown-menu a:hover {
+    background: #f8f9fa;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #2e7d32;
+}
+
+.accordion-body {
+    background-color: #f8f9fa;
+}
+
+.form-floating label {
+    padding-left: 35px;
+}
+
+.form-control {
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+.progress {
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
+
+#forcaSenha {
+    transition: width 0.3s ease;
+}
+
+/* Garante que o modal tenha bordas arredondadas consistentes */
+.modal-content {
+    border-radius: 12px !important;
+    /* Define bordas arredondadas consistentes */
+    overflow: hidden;
+    /* Garante que os elementos internos respeitem as bordas */
+    border: 1px solid #dee2e6;
+    /* Adiciona uma borda consistente */
+}
+
+/* Garante que o primeiro accordion-item tenha bordas arredondadas superiores */
+.accordion-item:first-child {
+    border-top-left-radius: 12px !important;
+    /* Arredonda o canto superior esquerdo */
+    border-top-right-radius: 12px !important;
+    /* Arredonda o canto superior direito */
+    overflow: hidden;
+    /* Garante que os elementos internos respeitem as bordas */
+}
+
+/* Garante que o último accordion-item tenha bordas arredondadas inferiores */
+.accordion-item:last-child {
+    border-bottom-left-radius: 12px !important;
+    /* Arredonda o canto inferior esquerdo */
+    border-bottom-right-radius: 12px !important;
+    /* Arredonda o canto inferior direito */
+    overflow: hidden;
+    /* Garante que os elementos internos respeitem as bordas */
+}
+
+/* Remove bordas internas do accordion-collapse */
+.accordion-collapse {
+    border: none !important;
+    /* Remove bordas internas */
+}
+
+/* Remove o border-radius padrão do botão para evitar sobreposição */
+.accordion-button {
+    border-radius: 0 !important;
+    /* Remove bordas arredondadas do botão */
+}
+
+/* Garante que o botão do primeiro accordion-item respeite o border-radius */
+.accordion-item:first-child .accordion-button {
+    border-top-left-radius: 12px !important;
+    /* Arredonda o canto superior esquerdo */
+    border-top-right-radius: 12px !important;
+    /* Arredonda o canto superior direito */
+}
+
+/* Remove bordas duplicadas entre os accordion-items */
+.accordion-item+.accordion-item {
+    border-top: none !important;
+    /* Remove a borda superior entre os itens */
+}
+
+/* Corrige o comportamento ao abrir o último accordion-item */
+.accordion-item:last-child .accordion-collapse {
+    border-bottom-left-radius: 12px !important;
+    /* Arredonda o canto inferior esquerdo */
+    border-bottom-right-radius: 12px !important;
+    /* Arredonda o canto inferior direito */
+    overflow: hidden;
+    /* Garante que os elementos internos respeitem as bordas */
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    background: #343a40;
+    color: white;
+    padding: 15px 0;
+}
+
+/* Estilos dos modais */
+#cadastroModal .modal-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#cadastroModal .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Barra de progresso */
+#cadastroModal .progress {
+    height: 5px;
+}
+
+#cadastroModal .progress-bar {
+    background-color: #2e7d32;
+}
+
+/* Estilos do formulário */
+#cadastroModal .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+}
+
+#cadastroModal .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: #80bdff;
+}
+
+#cadastroModal .form-label {
+    font-weight: bold;
+}
+
+#cadastroModal .form-select {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+}
+
+/* Botões */
+#cadastroModal .btn {
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+#cadastroModal .btn-outline-success {
+    color: #2e7d32;
+    border-color: #2e7d32;
+}
+
+#cadastroModal .btn-outline-success:hover {
+    background-color: #2e7d32;
+    color: #fff;
+}
+
+#cadastroModal .btn-success {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+}
+
+#cadastroModal .btn-success:hover {
+    background-color: #1b5e20;
+    border-color: #1b5e20;
+}
+
+/* Layout responsivo */
+#cadastroModal .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#cadastroModal .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#cadastroModal .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#cadastroModal .mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+#cadastroModal .g-3 {
+    gap: 1rem;
+}
+
+/* Texto */
+#cadastroModal .text-success {
+    color: #2e7d32 !important;
+}
+
+#cadastroModal .bg-success {
+    background-color: #2e7d32 !important;
+    color: #fff;
+}
+
+/* Carrossel */
+#cadastroModal .carousel-item {
+    min-height: 400px;
+}
+
+#cadastroModal .step-content {
+    padding: 1rem 2rem;
+}
+
+/* Outros estilos */
+#cadastroModal .me-auto {
+    margin-right: auto !important;
+}
+
+.star-rating {
+    color: var(--color-accent);
+    font-size: 1.4rem;
+}

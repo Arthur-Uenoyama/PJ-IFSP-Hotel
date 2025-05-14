@@ -1,0 +1,57 @@
+:root {
+    --primary-green: #2e7d32;
+    --secondary-green: #81c784;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-main {
+    max-width: 1200px;
+    padding: 2rem 1.5rem;
+}
+
+h1 {
+    color: var(--primary-green);
+    font-weight: 600;
+    border-bottom: 3px solid var(--secondary-green);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card-section {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-label {
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+.table-custom thead {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.form-check {
+    align-self: flex-end;
+    /* Alinha o switch no final da coluna */
+    margin-bottom: 0;
+    /* Remove margens extras */
+}

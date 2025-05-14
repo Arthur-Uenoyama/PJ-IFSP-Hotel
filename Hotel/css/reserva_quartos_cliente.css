@@ -1,0 +1,193 @@
+body,
+    html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar-custom {
+      background-color: #343a40;
+    }
+
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?hotel,room') no-repeat center center/cover;
+      position: relative;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      min-height: 18vh;
+      /* Altura mínima reduzida */
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Media Queries para responsividade */
+    @media (max-width: 1800px) {
+      .hero {
+        min-height: 20vh;
+        /* Altura menor para mobile */
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-top: 4rem;
+      }
+    }
+
+    @media (max-width: 1250px) {
+      .hero {
+        min-height: 23vh;
+        /* Altura menor para mobile */
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-top: 4rem;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .hero {
+        min-height: 30vh;
+        /* Altura menor para mobile */
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-top: 2rem;
+      }
+    }
+
+
+    /* Media Queries para responsividade */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 40vh;
+        /* Altura menor para mobile */
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero {
+        min-height: 40vh;
+        /* Altura ainda menor para telas pequenas */
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+        padding: 0 1rem;
+      }
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-body .btn {
+      margin-top: auto;
+    }
+
+    .rounded-4 {
+      border-radius: 1rem !important;
+    }
+
+    .card-border-success {
+      border-width: 2px;
+    }
+
+    .form-floating {
+      margin-bottom: 1rem;
+      height: auto;
+    }
+
+    .alert-success {
+      margin-top: 1rem !important;
+    }
+
+    /* Estilos para os modais */
+    .modal-content,
+    #reservaModalGrupo .modal-content {
+      border: 3px solid rgba(42, 127, 98, 0.15);
+      border-radius: 1.5rem;
+      overflow: hidden;
+    }
+
+    .modal-header,
+    #reservaModalGrupo .modal-header {
+      padding: 1.5rem;
+      border-radius: 1.5rem 1.5rem 0 0;
+      background-color: #28a745;
+      /* Cor de fundo do cabeçalho */
+      color: white;
+      /* Cor do texto */
+    }
+
+    .modal-body,
+    #reservaModalGrupo .modal-body {
+      padding: 1.5rem;
+    }
+
+    .modal-footer,
+    #reservaModalGrupo .modal-footer {
+      padding: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+
+    /* Estilos para a lista de quartos no modal de grupo */
+    #reservaModalGrupo .list-group-item {
+      border: none;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #reservaModalGrupo .list-group-item .badge {
+      font-size: 0.875rem;
+      background-color: #28a745;
+      color: white;
+    }

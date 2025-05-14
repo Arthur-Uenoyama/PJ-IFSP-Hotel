@@ -1,0 +1,176 @@
+:root {
+    --primary-green: #2e7d32;
+    --secondary-green: #81c784;
+}
+
+.form-label {
+    color: #006400;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-main {
+    flex: 1;
+    max-width: 1200px;
+    padding: 2rem 1.5rem;
+}
+
+h1 {
+    color: var(--primary-green);
+    font-weight: 600;
+    border-bottom: 3px solid var(--secondary-green);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form-label {
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+.card-section {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hospede-item {
+    transition: all 0.3s ease;
+}
+
+.hospede-item button {
+    flex-shrink: 0;
+    /* Impede que o botão encolha */
+    height: 38px;
+    /* Aumenta a altura do botão */
+    width: 300px;
+    /* Aumenta a largura do botão */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    /* Aumenta o tamanho do ícone */
+}
+
+.hospede-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Sugestões de clientes */
+.suggestions-container {
+    position: relative;
+}
+
+.suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.suggestion-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fa;
+}
+
+.suggestion-item div:first-child {
+    font-weight: 500;
+}
+
+.suggestion-item .small {
+    font-size: 0.8rem;
+}
+
+#clienteSelecionadoContainer {
+    flex-grow: 1;
+    margin-right: -1px; /* Para alinhar com o botão */
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding-top:3px;
+  }
+  
+  #nomeClienteSelecionado {
+    font-weight: 500;
+    margin-right: 10px;
+  }  
+
+  /* Container principal do input de cliente */
+.cliente-input-group {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* Input visual (quando está digitando) */
+.cliente-input-visual {
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    padding: 0.375rem 0.75rem;
+}
+
+/* Container do cliente selecionado */
+.cliente-selecionado-container {
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    padding: 0.375rem 0.75rem;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Nome do cliente selecionado */
+.cliente-selecionado-nome {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+/* Botão de limpar */
+.cliente-btn-limpar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: 0 0.75rem;
+}
+
+/* Estado quando tem cliente selecionado */
+.cliente-btn-limpar.btn-danger {
+    padding: 0 0.75rem;
+}
+
+/* Ajuste para manter o mesmo tamanho em todos os estados */
+.input-group > .form-control,
+.input-group > .cliente-selecionado-container {
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    margin-bottom: 0;
+}

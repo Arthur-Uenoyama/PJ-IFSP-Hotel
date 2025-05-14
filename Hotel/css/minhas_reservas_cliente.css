@@ -1,0 +1,97 @@
+:root {
+    --primary-color: #2e7d32;
+    --secondary-color: #81c784;
+    --accent-color: #ffab00;
+    --text-color: #2d3748;
+    --background-color: #f8f9fa;
+}
+
+body {
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.reserva-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.reserva-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.badge-sucesso {
+    background-color: #28a745;
+    /* Verde */
+    color: #fff;
+}
+
+.badge-pendente {
+    background-color: #ffc107;
+    /* Amarelo */
+    color: #fff;
+}
+
+.badge-primario {
+    background-color: #007bff;
+    /* Azul */
+    color: #fff;
+}
+
+.badge-info {
+    background-color: #17a2b8;
+    /* Azul Claro */
+    color: #fff;
+}
+
+.badge-perigo {
+    background-color: #dc3545;
+    /* Vermelho */
+    color: #fff;
+}
+
+.badge-secundario {
+    background-color: #6c757d;
+    /* Cinza */
+    color: #fff;
+}
+
+.info-icon {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem;
+    background: white;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    color: #dee2e6;
+    margin-bottom: 1rem;
+}
+button {
+    border: none   ;
+}
